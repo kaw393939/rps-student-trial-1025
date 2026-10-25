@@ -27,7 +27,7 @@ Results are from the **player’s perspective**. `determine_winner(player, compu
 
 ### Agreed plan
 
-Replace this paragraph with your short plan after discussing it with ChatGPT. Keep the nine expected results above. Resolve questions before asking Codex to implement them.
+Implement determine_winner(player, computer) for one independent round, returning win, lose, or tie from the player’s perspective. Follow the nine expected results above and keep the supplied interface and server. Show both choices and the correct result; choosing again starts a fresh round. Add nine explicit rule tests and a real submitted-round test with a fixed computer move. Run .venv/bin/python -m pytest, review the diff against this spec, then check the browser and record actual observations. No score, saved history, or additional features.
 
 ### Checks
 
@@ -35,6 +35,7 @@ AI runs nine explicit rule cases plus a complete submitted round with a fixed co
 
 ### Work record
 
-- Issue: add your own issue URL.
-- Implementation: **Not implemented.** The shell is supplied; `game.py` is unfinished.
-- Checks: **Rules not verified.** Supplied tests cover the shell only. Record actual AI checks and your browser observations here after implementation; put detailed results in the PR.
+- Issue: https://github.com/kaw393939/rps-student-trial-1025/issues/1
+- Implementation: [game.py](game.py) implements one independent round from the player's perspective, keeping the supplied interface and server.
+- Checks: `.venv/bin/python -m pytest` passed all 22 tests: nine explicit matchups and one real Flask POST/result check with fixed computer scissors in [tests/test_game.py](tests/test_game.py), plus 12 supplied shell tests. Reviewed the diff against RPS-001: no score, history, or additional features.
+- Student checks: reported pytest result of 22 passed. Browser observations (player/computer): Paper/Paper tie, Rock/Rock tie, Scissors/Paper “You win!”, and Rock/Scissors “You win!”. Both choices were visible; each choice started a new round; the unfinished notice was gone. Tab focused Rock and Enter played a correct round. These observations cover four browser matchups, not all nine.
